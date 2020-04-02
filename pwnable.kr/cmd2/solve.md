@@ -3,5 +3,5 @@
 
 # Explanation:
 * $(printf "%b" "\57") is replaced with "/" (in order to bypass "/" filter)
-* fl*ag is replaced with flag (in order to bypass "flag" filter)
+* fl*g is replaced with flag (in order to bypass "flag" filter)
 
