@@ -1,0 +1,4 @@
+aquire the following files: jar, pdf, jpg, elf
+
+cat the following files together and upload to get the flag
+(e.g. cat elf jar > part1)
