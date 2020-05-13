@@ -2,3 +2,4 @@ create a symlink to flag.txt
 create a big text file
 
 ./race link big.txt
+./binary link
