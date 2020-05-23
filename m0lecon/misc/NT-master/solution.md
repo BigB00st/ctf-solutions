@@ -25,7 +25,7 @@ If ```b = 1```, then ```lcm(a,b) = a```
 
 That is it. For each ```N```, send ```a = N-1, b = 1```
 
-*solve.py*:
+[solve.py](solve.py):
 ```py
 from pwn import *
 
