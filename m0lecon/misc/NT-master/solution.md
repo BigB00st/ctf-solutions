@@ -10,15 +10,20 @@ N = <number>
 
 where ```<number>``` is a random number.
 
-We must send two positive integers a,b such that a>b and gcd(a,b)+lcm(a,b)=N.
+We must send for each given N, two positive integers a,b such that a>b and gcd(a,b)+lcm(a,b)=N.
 
 # Solution
-If b = 1, then gcd(a,b) = 1.
-If b = 1, then lcm(a,b) = a.
+If ```b = 1```, then ```gcd(a,b) = 1```
+
+If ```b = 1```, then ```lcm(a,b) = a```
+
 ```gcd(a,b)+lcm(a,b) = a+1```
+
 ```a+1 = N```
+
 ```a = N-1```
-That is it. For each N, send ```a = N-1, b = 1```;
+
+That is it. For each ```N```, send ```a = N-1, b = 1```
 
 *solve.py*:
 ```py
