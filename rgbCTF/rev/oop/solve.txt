@@ -1,0 +1,59 @@
+// gl.java
+
+public String vg() { 
+ return "we";
+}
+
+public String we() { 
+ return "rb";
+}
+
+public String rb() { 
+ return "ja";
+}
+
+
+// pr.java
+
+public String pk() { 
+ return "te";
+}
+
+public String te() { 
+ return "wj";
+}
+
+public String wj() { 
+ return "va";
+}
+
+// qg.java
+
+public String am() { 
+ return "xs";
+}
+
+public String xs() { 
+ return "mb";
+}
+
+public String mb() { 
+ return "ut";
+}
+
+
+// fg.java
+
+public String gg() { 
+ return "mg";
+}
+
+public String mg() { 
+ return "oa";
+}
+
+public String oa() { 
+ return "il";
+}
+
+final: glvgprpkqgamfggg ^ 2 = enterprisecodeee
