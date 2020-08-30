@@ -112,7 +112,6 @@ pop_rax_ret = 0x0000000000401daf#: pop rax; ret;
 pop_r10_ret = 0x0000000000401db1#: pop r10; ret;
 syscall_ret = 0x000000000041860c#: syscall; ret;
 
-
 string_addr = 0x004d1260
 path_str = "/home/fbi/aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaabeaabfaabgaabhaabiaabjaabkaablaabmaabnaaboaabpaabqaabraabsaabtaabuaabvaabwaabxaabyaabzaacbaaccaacdaaceaacfaacgaachaaciaacjaackaaclaacma.txt\x00"
 
