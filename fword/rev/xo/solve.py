@@ -3,7 +3,7 @@ from pwn import *
 
 charset = "etaoinsrhdlucmfywgpbvkxqjz_0123456789ETAOINSRHDLUCMFYWGPBVKXQJZ{}!?"
 p = remote("xo.fword.wtf", 5554)
-flag = "NuL1_Byt35"
+flag = ""
 
 
 while True:
