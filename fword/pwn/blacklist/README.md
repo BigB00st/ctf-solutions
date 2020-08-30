@@ -3,14 +3,14 @@
 
 We are given a statically linked binary:
 
-```
+```shell
 $ file ./blacklist
 ./blacklist: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, BuildID[sha1]=8231fd8232118e3b92ca37d041e1da3ab1daf4d9, for GNU/Linux 3.2.0, stripped
 ```
 
 From analzying the binary, we can see it uses seccomp to restrict syscalls, then waits for input:
 
-```
+```shell
 $ strace ./blacklist
 ...
 seccomp(SECCOMP_SET_MODE_FILTER, 0, {len=24, filter=0x902350}) = 0
@@ -19,14 +19,15 @@ read(0,
 
 We can easily overflow, find the offset and control rip, but due to seccomp, it will be much harder to read the flag.
 
-```
+```shell
 $ ./blacklist
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 Segmentation fault
 ```
 
 Let's analyze the seccomp profile using [seccomp-tools](https://github.com/david942j/seccomp-tools):
-```
+
+```shell
 $ seccomp-tools dump ./blacklist
  line  CODE  JT   JF      K
 =================================
@@ -66,7 +67,7 @@ We need to bypass the seccomp filter and read the flag somehow (it's path is kno
 Now because the binary is statically linked, we will have plenty of rop gadgets to use. I chose to write a rop chain that uses only these syscalls. Another approach is to write custom shellcode, then use mprotect to mark the section of the shellcode as executable, and execute it.
 
 Before I wrote the rop chain, I tested the syscalls in a [c program](blacklist/idea.c) in order to test it easily:
-```
+```c
 #include <fcntl.h>
 #include <sys/sendfile.h>
 
@@ -79,7 +80,7 @@ int main() {
 ```
 
 Now the [final exploit](blacklist/solve.py):
-```
+```py
 from pwn import *
 
 context(arch="amd64")
