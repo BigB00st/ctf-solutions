@@ -66,7 +66,7 @@ We need to bypass the seccomp filter and read the flag somehow (it's path is kno
 
 Now because the binary is statically linked, we will have plenty of rop gadgets to use. I chose to write a rop chain that uses only these syscalls. Another approach is to write custom shellcode, then use mprotect to mark the section of the shellcode as executable, and execute it.
 
-Before I wrote the rop chain, I tested the syscalls in a [c program](blacklist/idea.c) in order to test it easily:
+Before I wrote the rop chain, I tested the syscalls in a [c program](idea.c) in order to test it easily:
 ```c
 #include <fcntl.h>
 #include <sys/sendfile.h>
@@ -79,7 +79,7 @@ int main() {
 }
 ```
 
-Now the [final exploit](blacklist/solve.py):
+Now the [final exploit](solve.py):
 ```py
 from pwn import *
 
