@@ -1,10 +1,5 @@
-#include <sys/types.h>
-#include <dirent.h>
-#include <stdio.h>
 #include <fcntl.h>
 #include <sys/sendfile.h>
-#include <unistd.h>
-
 
 int main() {
     // read(0, RW_ADDR, 900); // write path of flag to known address
