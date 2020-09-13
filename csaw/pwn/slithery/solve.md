@@ -7,7 +7,7 @@
 
 
 ### Description
-We are given the source code for the sandbox. It uses a blacklist which is not known to us. So we have to try different inputs to see what is blocked and not
+We are given the source code for the sandbox. It execs our input, but first filters using a blacklist which is not known to us. So we have to try different inputs to see what is blocked and not.
 
 ### Solution
 We want to eventually import the **os** module and spawn a shell. So let's traverse through different objects and libraries
@@ -21,5 +21,3 @@ object.__subclasses__()[184].__init__.__globals__['s'+'ys'].modules['o'+'s'].__d
 ```
 
 **Flag:** ``flag{y4_sl1th3r3d_0ut}``
-
-Reference: https://www.digitalwhisper.co.il/files/Zines/0x5A/DW90-5-PySandbox.pdf
